@@ -27,9 +27,9 @@ Before you begin, you need to have tokens on the appropriate network.
 | Network | Type |
 | :--- | :--- |
 | **Kusama Asset Hub** | Mainnet |
-| **Passet Asset Hub** | Testnet |
+| **Polkadot Hub Testnet** | Testnet |
 
-### Optional: If you want to deploy to Passet Asset Hub
+### Optional: If you want to deploy to Polkadot Hub Testnet
 
 You can get free testnet tokens from the official Polkadot faucet:
 https://faucet.polkadot.io/?parachain=1111
@@ -52,7 +52,7 @@ First, create an association between your Substrate-based account and your EVM a
 
 1.  Go to **Polkadot-JS Apps** and connect to the **Kusama Asset Hub** network.
 
-![Access Kusama Asset AssetHub](/static/images/polkadot/blog/polkadot-deploy-uniswapv2/asset_hub.png)
+![Access Kusama AssetHub](/static/images/polkadot/blog/polkadot-deploy-uniswapv2/asset_hub.png)
 
 2.  Navigate to **Developer \> Extrinsics**.
 3.  Submit the extrinsic: `revive.mapAccount()`.
@@ -125,7 +125,7 @@ Now, let's prepare the Uniswap V2 smart contracts for deployment.
     npm install
     ```
 
-> **💡 Important: The project already configured `Passet Asset Hub` and `Kusama Asset Hub` on `hardhat.config.js` **
+> **💡 Important: The project already configured `Polkadot Hub Testnet` and `Kusama Asset Hub` on `hardhat.config.js` **
 
 
 ### Compile and Deploy the Smart Contracts
@@ -163,7 +163,7 @@ Successfully compiled 12 Solidity files
 #### Deploy the ERC20 Token Contract
 
 ```bash
-npx hardhat ignition deploy ignition/modules/UniswapV2ERC20.js --network <passetHub or kusamaHub>
+npx hardhat ignition deploy ignition/modules/UniswapV2ERC20.js --network <polkadotHubTestnet or kusamaHub>
 ```
 
 *Result: A new ERC20 token contract will be deployed. Note the address.*
@@ -188,7 +188,7 @@ UniswapV2ERC20Module#UniswapV2ERC20 - 0xDE950Fa08AA869F17028cfA107EEe593124fDe03
 #### Deploy the WETH Contract
 
 ```bash
-npx hardhat ignition deploy ignition/modules/UniswapV2WETH.js --network <passetHub or kusamaHub>
+npx hardhat ignition deploy ignition/modules/UniswapV2WETH.js --network <polkadotHubTestnet or kusamaHub>
 ```
 
 *Result: The WETH contract will be deployed.*
@@ -208,7 +208,7 @@ UniswapV2WETHModule#WETH - 0xea2B9312CE3B867AAd92c8fC033C9640b136383b
 #### Deploy the Factory Contract
 
 ```bash
-npx hardhat ignition deploy ignition/modules/UniswapV2Factory.js --network <passetHub or kusamaHub>
+npx hardhat ignition deploy ignition/modules/UniswapV2Factory.js --network <polkadotHubTestnet or kusamaHub>
 ```
 
 *Result: The core Uniswap V2 Factory contract will be deployed.*
@@ -229,7 +229,7 @@ UniswapV2FactoryModule#UniswapV2Factory - 0xE4979C8F7f4AC4354304E11B6211ABB3b40C
 #### Deploy a Liquidity Pair
 
 ```bash
-npx hardhat ignition deploy ignition/modules/UniswapV2Pair.js --network <passetHub or kusamaHub>
+npx hardhat ignition deploy ignition/modules/UniswapV2Pair.js --network <polkadotHubTestnet or kusamaHub>
 ```
 
 *Result: The Factory's `createPair` function is called, creating a new trading pair.*
